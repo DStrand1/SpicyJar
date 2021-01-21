@@ -129,7 +129,7 @@ public class ChemistryRecipes {
         RecipeMaps.CHEMICAL_RECIPES.recipeBuilder().duration(240).EUt(96).input(OrePrefix.dust, Materials.Silicon).fluidInputs(Materials.Epichlorhydrin.getFluid(144)).fluidOutputs(Materials.SiliconeRubber.getFluid(144)).buildAndRegister();
         RecipeMaps.MIXER_RECIPES.recipeBuilder().duration(50).EUt(8).fluidInputs(Materials.PolyvinylAcetate.getFluid(1000), Materials.Acetone.getFluid(1500)).fluidOutputs(Materials.Glue.getFluid(2500)).buildAndRegister();
         RecipeMaps.MIXER_RECIPES.recipeBuilder().duration(50).EUt(8).fluidInputs(Materials.PolyvinylAcetate.getFluid(1000), Materials.MethylAcetate.getFluid(1500)).fluidOutputs(Materials.Glue.getFluid(2500)).buildAndRegister();
-        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder().duration(160).EUt(30).fluidInputs(Materials.HydrochloricAcid.getFluid(1000), Materials.Acetone.getFluid(1000), Materials.Phenol.getFluid(2000)).fluidOutputs(Materials.BisphenolA.getFluid(1000), Materials.Water.getFluid(1000)).buildAndRegister();
+        RecipeMaps.CHEMICAL_RECIPES.recipeBuilder().duration(160).EUt(30).fluidInputs(Materials.HydrochloricAcid.getFluid(1000), Materials.Acetone.getFluid(1000), Materials.Phenol.getFluid(2000)).fluidOutputs(Materials.BisphenolA.getFluid(1000), Materials.HydrochloricAcid.getFluid(1000)).buildAndRegister();
         RecipeMaps.CHEMICAL_RECIPES.recipeBuilder().duration(320).EUt(8).fluidInputs(Materials.SulfurTrioxide.getFluid(1000), Materials.Water.getFluid(1000)).fluidOutputs(Materials.SulfuricAcid.getFluid(1000)).buildAndRegister();
 
         // PTFE
