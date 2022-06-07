@@ -8,4 +8,7 @@ public interface IMultiblockPart {
 
     void removeFromMultiBlock(MultiblockControllerBase controllerBase);
 
+    default boolean canPartShare() {
+        return false;
+    }
 }

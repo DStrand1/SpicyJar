@@ -24,6 +24,7 @@ public abstract class MetaTileEntityMultiblockPart extends MetaTileEntity implem
     private final int tier;
     private BlockPos controllerPos;
     private MultiblockControllerBase controllerTile;
+    protected ICubeRenderer hatchTexture = null;
 
     public MetaTileEntityMultiblockPart(ResourceLocation metaTileEntityId, int tier) {
         super(metaTileEntityId);
@@ -69,7 +70,13 @@ public abstract class MetaTileEntityMultiblockPart extends MetaTileEntity implem
 
     public ICubeRenderer getBaseTexture() {
         MultiblockControllerBase controller = getController();
-        return controller == null ? Textures.VOLTAGE_CASINGS[tier] : controller.getBaseTexture(this);
+        if (controller != null) {
+            return this.hatchTexture = controller.getBaseTexture(this);
+        } else if (this.hatchTexture != null) {
+            return hatchTexture;
+        } else {
+            return Textures.VOLTAGE_CASINGS[tier];
+        }
     }
 
     public boolean shouldRenderOverlay() {
@@ -140,11 +147,13 @@ public abstract class MetaTileEntityMultiblockPart extends MetaTileEntity implem
     @Override
     public void addToMultiBlock(MultiblockControllerBase controllerBase) {
         setController(controllerBase);
+        scheduleRenderUpdate();
     }
 
     @Override
     public void removeFromMultiBlock(MultiblockControllerBase controllerBase) {
         setController(null);
+        scheduleRenderUpdate();
     }
 
     @Override
