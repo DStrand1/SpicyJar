@@ -12,6 +12,8 @@ public final class GregTechVersion {
     //This number is incremented every build, and never reset. Should always be 0 in the repo code.
     public static final int BUILD = 0;
 
+    public static final int SPICY_VER = 1;
+
     public static final Version VERSION = new Version(MAJOR, MINOR, REVISION, BUILD);
 
     private GregTechVersion() {

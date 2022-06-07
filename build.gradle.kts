@@ -384,6 +384,7 @@ fun getVersionFromJava(file: File): String  {
     var major = "0"
     var minor = "0"
     var revision = "0"
+    var spicyver = "0"
 
     val prefix = "public static final int"
     file.forEachLine { line ->
@@ -397,6 +398,7 @@ fun getVersionFromJava(file: File): String  {
                 pts[0] == "MAJOR" -> major = pts[pts.size - 1]
                 pts[0] == "MINOR" -> minor = pts[pts.size - 1]
                 pts[0] == "REVISION" -> revision = pts[pts.size - 1]
+                pts[0] == "SPICY_VER" -> spicyver = pts[pts.size - 1]
             }
         }
     }
@@ -408,7 +410,7 @@ fun getVersionFromJava(file: File): String  {
 
     val build = getBuildNumber()
 
-    return "$major.$minor.$revision.$build"
+    return "$major.$minor.$revision.$build-spicy$spicyver"
 }
 
 fun CurseExtension.project(config: CurseProject.() -> Unit) = CurseProject().also {

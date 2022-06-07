@@ -1,6 +1,10 @@
 ## Changelog
 
 ### 1.17.1
+* Take fluids out of generators - DStrand1
+* Part sharing - DStrand1
+
+### 1.17.1
 * Added warning to controller if Turbine is obstructed (#1710) - ALongStringOfNumbers
 * Updated fetching of dimensions in worldgen to catch late registrations (#1709) - ALongStringOfNumbers
 * Fixed usage of multiple dimensions in worldgen definitions (#1713) - Synthitic
